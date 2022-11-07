@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -20,6 +21,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "API_KEY", "c6c3f1297f568b08c94d58169a1ac0ee")
+        }
+        debug {
+            buildConfigField("String", "API_KEY", "\"c6c3f1297f568b08c94d58169a1ac0ee\"")
         }
     }
 }
@@ -30,6 +35,27 @@ dependencies {
 
     implementation 'androidx.leanback:leanback:1.2.0-alpha02'
 
+    //Retrofit
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //Coroutines
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+
+    //Glide
+
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+
+    //Exoplayer
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.1'
+    implementation 'com.google.android.exoplayer:extension-leanback:2.18.1'
+
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'

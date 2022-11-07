@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.catalog.view.CatalogActivity">
+    tools:context=".ui.trailer.view.TrailerActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/activity_main__container__parent_fragment"
-        android:name="com.isaacdelosreyes.googletvleanback.ui.catalog.view.MainFragment"
+        android:id="@+id/activity_trailer__container__parent_fragment"
+        android:name="com.isaacdelosreyes.googletvleanback.ui.trailer.view.TrailerFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
