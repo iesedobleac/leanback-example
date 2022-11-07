@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Google TV Leanback</string>
+
+    <string name="video_test_mp4">http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4</string>
 </resources>
