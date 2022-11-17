@@ -7,7 +7,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/activity_main__container__parent_fragment"
-        android:name="com.isaacdelosreyes.googletvleanback.ui.catalog.view.MainFragment"
+        android:name="com.isaacdelosreyes.googletvleanback.ui.catalog.view.ImageCatalogFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

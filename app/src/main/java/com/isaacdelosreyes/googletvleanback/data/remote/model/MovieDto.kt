@@ -3,6 +3,8 @@ package com.isaacdelosreyes.googletvleanback.data.remote.model
 import com.google.gson.annotations.SerializedName
 import com.isaacdelosreyes.googletvleanback.data.local.model.MovieBo
 
+private const val VIDEOS_BASE_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/"
+
 data class MovieDto(
     @SerializedName("adult")
     val adult: Boolean,
@@ -40,5 +42,6 @@ fun MovieDto.toBo() = MovieBo(
     releaseDate = releaseDate,
     overview = overview,
     posterPath = "https://image.tmdb.org/t/p/w185/$posterPath",
-    backdrop = "https://image.tmdb.org/t/p/w780$backdropPath"
+    backdrop = "https://image.tmdb.org/t/p/w780$backdropPath",
+    trailerUrl = "${VIDEOS_BASE_URL}sample/ElephantsDream.mp4"
 )

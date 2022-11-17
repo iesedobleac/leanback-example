@@ -6,7 +6,7 @@
     tools:context=".ui.details.view.DetailsActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/activity_details__container__fragment"
+        android:id="@+id/activity_details__container__content_fragment"
         android:name="com.isaacdelosreyes.googletvleanback.ui.details.view.DetailsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

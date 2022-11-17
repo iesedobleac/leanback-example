@@ -10,5 +10,6 @@ data class MovieBo(
     val releaseDate: String,
     val overview: String,
     val posterPath: String,
-    val backdrop: String?
+    val backdrop: String?,
+    val trailerUrl: String?
 ) : Parcelable
