@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/guidance_icon"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/netflix"
+        app:layout_constraintBottom_toTopOf="@id/guidance_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/guidance_breadcrumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/guidance_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guidance_description"
+        app:layout_constraintEnd_toEndOf="@id/guidance_icon"
+        app:layout_constraintStart_toStartOf="@id/guidance_icon"
+        app:layout_constraintTop_toBottomOf="@id/guidance_icon"
+        tools:text="Bienvenido" />
+
+    <TextView
+        android:id="@+id/guidance_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidance_title"
+        app:layout_constraintStart_toStartOf="@id/guidance_title"
+        app:layout_constraintTop_toBottomOf="@id/guidance_title"
+        tools:text="¿Quieres acceder a la aplicación?" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

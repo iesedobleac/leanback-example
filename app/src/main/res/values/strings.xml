@@ -2,4 +2,9 @@
     <string name="app_name">Google TV Leanback</string>
 
     <string name="video_test_mp4">http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4</string>
+
+    <string name="dialog_fragment_title">Bienvenido</string>
+    <string name="dialog_fragment_desc">¿Quieres acceder a la aplicación?</string>
+    <string name="dialog_fragment_action_enter">Acceder</string>
+    <string name="dialog_fragment_action_cancel">Cancelar</string>
 </resources>

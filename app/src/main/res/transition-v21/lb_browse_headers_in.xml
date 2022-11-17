@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Al haber sobreescrito la clase sobre la que aplican estas transiciones, también hemos tenido
+ que hacer lo mismo con estas, ya que las originales apuntaban al elemento VerticalGridView que
+ era el elemento principal, y ahora al no serlo tenía comportamientos extraños. -->
+
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@integer/lb_browse_headers_transition_duration">
+
+    <changeBounds
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:startDelay="@integer/lb_browse_headers_transition_delay" />
+
+    <changeTransform
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:startDelay="@integer/lb_browse_headers_transition_delay">
+
+        <targets>
+            <target android:targetId="@id/rows_fragment__container__parent" />
+        </targets>
+
+    </changeTransform>
+
+    <fade
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:startDelay="@integer/lb_browse_headers_transition_delay"
+        android:transitionVisibilityMode="mode_in" />
+
+    <fade
+        android:interpolator="@android:interpolator/fast_out_linear_in"
+        android:transitionVisibilityMode="mode_out" />
+
+</transitionSet>

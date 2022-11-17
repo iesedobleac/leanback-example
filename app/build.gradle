@@ -27,6 +27,10 @@ android {
             buildConfigField("String", "API_KEY", "\"c6c3f1297f568b08c94d58169a1ac0ee\"")
         }
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {

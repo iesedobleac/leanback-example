@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Esta clase es muy importante, pues estamos sobreescribiendo la que ya tiene la librería para
+ poder personalizarla a nuestro gusto. Es crucial no cambiar ni el nombre de la clase ni el de los
+ elementos que ya existían en ella, de lo contrario no funcionará con normalidad y tendremos unos
+ comportamientos anómalos. -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rows_fragment__container__parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/rows_fragment__label__test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_red_dark"
+        android:clipToPadding="false"
+        android:focusable="false"
+        android:gravity="top|center"
+        android:textColor="@android:color/white"
+        app:resize_mode="zoom"
+        app:use_controller="false"
+        tools:text="Hola" />
+
+    <androidx.leanback.widget.VerticalGridView
+        android:id="@+id/container_list"
+        style="?attr/rowsVerticalGridStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false" />
+
+</FrameLayout>
