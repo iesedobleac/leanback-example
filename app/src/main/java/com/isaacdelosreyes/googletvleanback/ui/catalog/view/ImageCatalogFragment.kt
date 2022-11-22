@@ -7,13 +7,19 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.leanback.app.BackgroundManager
 import androidx.leanback.app.BrowseSupportFragment
-import androidx.leanback.widget.*
+import androidx.leanback.widget.ArrayObjectAdapter
+import androidx.leanback.widget.HeaderItem
+import androidx.leanback.widget.ListRowPresenter
+import androidx.leanback.widget.ListRow
+import androidx.leanback.widget.OnItemViewClickedListener
+import androidx.leanback.widget.OnItemViewSelectedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import com.isaacdelosreyes.googletvleanback.R
 import com.isaacdelosreyes.googletvleanback.data.local.model.MovieBo
 import com.isaacdelosreyes.googletvleanback.ui.catalog.utils.CategoriesEnum
 import com.isaacdelosreyes.googletvleanback.ui.catalog.viewmodel.CatalogViewModel
-import com.isaacdelosreyes.googletvleanback.ui.details.view.DetailsActivity
+import com.isaacdelosreyes.googletvleanback.ui.settings.SettingsActivity
 import com.isaacdelosreyes.googletvleanback.ui.utils.CardPresenter
 import com.isaacdelosreyes.googletvleanback.utils.KEY_MOVIE_SELECTED
 import com.isaacdelosreyes.googletvleanback.utils.getName
@@ -77,8 +83,23 @@ class ImageCatalogFragment : BrowseSupportFragment() {
 
             rowsAdapter.add(ListRow(headerItem, listRow))
         }
+        insertSettingsRow(rowsAdapter)
 
         adapter = rowsAdapter
+    }
+
+    /**
+     * Usaremos este método para añadir una sección aparte de las categorías de películas donde
+     * meteremos opciones como los ajustes. Esta es una forma opcional de hacerlo, se podría hacer
+     * de diferentes formas, a gusto de cada desarrollador.
+     */
+
+    private fun insertSettingsRow(rowsAdapter: ArrayObjectAdapter) {
+        val title = getString(R.string.settings_section_title)
+        val headerSettings = HeaderItem(99L, title)
+        val listRow = ArrayObjectAdapter(SettingsPresenter())
+        listRow.add(0, title)
+        rowsAdapter.add(ListRow(headerSettings, listRow))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -106,14 +127,24 @@ class ImageCatalogFragment : BrowseSupportFragment() {
         /**
          * Con este método podemos detectar cuando se hace click en un elemento de nuestra lista
          * horizontal y podremos hacer alguna acción acorde a ello.
+         *
+         * Aquí tenemos diferenciado por un lado el click en un elemento que sea una MovieBo o
+         * cuando hacemos click en los ajustes, esto lo obtenemos a través del Header de la Row,
+         * obteniendo el nombre que hemos pulsado.
          */
 
-        onItemViewClickedListener = OnItemViewClickedListener { _, item, _, _ ->
-            Bundle().apply {
-                putParcelable(KEY_MOVIE_SELECTED, item as? MovieBo)
-                val intent = Intent(requireContext(), DetailsActivity::class.java)
-                intent.putExtras(this)
+        onItemViewClickedListener = OnItemViewClickedListener { _, item, _, row ->
+            if (row.headerItem.name.equals(getString(R.string.settings_section_title))) {
+                val intent = Intent(requireContext(), SettingsActivity::class.java)
                 requireActivity().startActivity(intent)
+
+            } else {
+                Bundle().apply {
+                    putParcelable(KEY_MOVIE_SELECTED, item as? MovieBo)
+                    val intent = Intent(requireContext(), SettingsActivity::class.java)
+                    intent.putExtras(this)
+                    requireActivity().startActivity(intent)
+                }
             }
         }
     }

@@ -19,24 +19,24 @@
         android:theme="@style/Theme.GoogleTVLeanback">
 
         <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:theme="@style/Theme.LeanbackPreferences"
+            android:exported="true" />
+
+        <activity
             android:name=".ui.dialog.DialogActivity"
             android:exported="true">
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
             android:name=".ui.trailer.view.TrailerActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.details.view.DetailsActivity"
             android:exported="false" />

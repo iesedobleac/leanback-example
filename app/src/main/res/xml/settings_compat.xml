@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:summary="This is a dummy activity only to show case how to build a settings in an
+     application. Changing configurations in this example doesn't affect anything."
+    android:title="Settings Example">
+
+    <PreferenceScreen
+        android:key="prefs_wifi_screen_key"
+        android:title="Wi-Fi">
+
+        <PreferenceCategory
+            android:key="prefs_wifi_others_key"
+            android:title="Other options">
+
+            <Preference
+                android:key="prefs_wifi_connect_wps"
+                android:title="Connect via WPS">
+
+            </Preference>
+
+        </PreferenceCategory>
+
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="prefs_date_time_screen_key"
+        android:title="Date &amp; time">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:key="prefs_date_time_automatic"
+            android:summaryOff="On"
+            android:summaryOn="Off"
+            android:title="Automatic date  &amp; time" />
+
+        <Preference
+            android:dependency="prefs_date_time_automatic"
+            android:key="prefs_date"
+            android:summary="01/01/1970"
+            android:title="Date" />
+
+        <Preference
+            android:dependency="prefs_date_time_automatic"
+            android:key="prefs_time"
+            android:summary="00:43 PM"
+            android:title="Time" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:key="prefs_date_time_use_timezone"
+            android:summary="Use network provided time zone"
+            android:title="Automatic time zone" />
+
+        <Preference
+            android:dependency="prefs_date_time_use_timezone"
+            android:summary="GMT 07:00 Pacific Daylight Time"
+            android:title="Time zone" />
+
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="prefs_apps_screen_key"
+        android:title="Apps">
+
+        <PreferenceCategory
+            android:key="prefs_app_settings_category"
+            android:title="Apps settings">
+
+            <PreferenceScreen
+                android:key="prefs_app_settings_screen_key"
+                android:summary="Lorem ipsum dolor sit amet consectur adipiscing."
+                android:title="App permissions">
+
+                <Preference
+                    android:selectable="false"
+                    android:summary="45.5 MB"
+                    android:title="Application A" />
+
+                <Preference
+                    android:selectable="false"
+                    android:summary="Hier steht ein voelligst sinnfreier Text den ja sowieso
+                    niemandhier lesen kann. Deshalb macht es auch keinen Unterschied ob hier
+                    sinnvolles und nicht so sinnvolles Zeug steht. Hm... Sasha, du kannst das
+                    vielleicht lesen und denkst dir jetzt auch, dass ich voll haengen geblieben
+                    bin, oder?... ^_^" />
+
+                <Preference
+                    android:key="pref_force_stop"
+                    android:title="Force Stop" />
+
+                <Preference
+                    android:key="pref_uninstall"
+                    android:title="Uninstall" />
+
+                <Preference
+                    android:key="pref_more_info"
+                    android:title="More Information" />
+
+            </PreferenceScreen>
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="prefs_app_downloaded_apps_category"
+            android:title="Downloaded Apps" />
+
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="About Developer"
+        app:key="prefs_about_developer_key">
+
+        <PreferenceCategory
+            android:key="prefs_about_developer_category"
+            android:title="Developer Information">
+
+            <Preference
+                android:selectable="false"
+                android:summary="Isaac de los Reyes"
+                android:title="Name" />
+
+            <Preference
+                android:key="prefs_about_developer_google_play"
+                android:title="Go to Google Play" />
+
+        </PreferenceCategory>
+
+    </PreferenceScreen>
+
+</PreferenceScreen>

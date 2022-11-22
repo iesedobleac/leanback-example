@@ -7,4 +7,6 @@
     <string name="dialog_fragment_desc">¿Quieres acceder a la aplicación?</string>
     <string name="dialog_fragment_action_enter">Acceder</string>
     <string name="dialog_fragment_action_cancel">Cancelar</string>
+
+    <string name="settings_section_title">Ajustes</string>
 </resources>
