@@ -38,6 +38,10 @@ dependencies {
     //Leanback library
 
     implementation 'androidx.leanback:leanback:1.2.0-alpha02'
+    implementation "androidx.leanback:leanback-preference:1.2.0-alpha02"
+
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
 
     //Retrofit
 

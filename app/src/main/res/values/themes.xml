@@ -2,4 +2,15 @@
 
     <style name="Theme.GoogleTVLeanback" parent="@style/Theme.Leanback" />
 
+    <!-- Hemos definido este tema custom para usar la pantalla de preferencias y poder darle
+    transparencia a la vista si queremos que se muestre por detrás los elementos y no quede
+    totalmente tapado. Es más una opción visual y opcional, aunque es recomendable. -->
+
+    <style name="Theme.LeanbackPreferences" parent="Theme.Leanback">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Leanback</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
 </resources>
